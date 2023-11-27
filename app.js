@@ -22,11 +22,18 @@ app.use(express.static("public"));
 //   })
 // })
 
+var posts = []
+
 app.get("/", (req, res) => {
+  
+
   res.render('home', {
     Home: "Home",
-    homeStartingContent: homeStartingContent
+    homePosts: posts
   })
+
+
+  console.log(posts)
 })
 
 app.get("/about", (req, res) => {
@@ -53,7 +60,16 @@ app.get("/compose", (req, res) => {
 
 app.post("/compose", (req, res) => {
 
-  
+  const post = {
+    Title: req.body.post_title,
+    Post: req.body.post_publish
+  }
+
+  posts.push(post)
+
+  //console.log(posts)
+
+  res.redirect("/")
 
 })
 

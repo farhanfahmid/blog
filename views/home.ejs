@@ -9,8 +9,15 @@
     <%= Home %>
 </h1>
 
-<p>
-    <%= homeStartingContent %>
-</p>
+<div>
+    <% for(var i=0; i<homePosts.length; i++){ %>
+        <h2>
+            <%= homePosts[i].Title %>
+        </h2>
+        <p>
+            <%= homePosts[i].Post %>   
+        </p>
+    <% } %>
+</div>
 
 <%- include("partials/footer") -%>
