@@ -10,12 +10,21 @@
 </h1>
 
 <div>
+    <h3>
+      <img src="images/pen-fill.svg" alt="">  <a href="/compose">Write something...</a>
+    </h3>
+</div>
+
+
+
+<div>
     <% for(var i=0; i<homePosts.length; i++){ %>
         <h2>
             <%= homePosts[i].Title %>
         </h2>
         <p>
-            <%= homePosts[i].Post %>   
+            <%= (homePosts[i].Post).slice(0, 100) + "..." %>  
+            <a href="/posts/<%= homePosts[i].Title %>">Read More</a> 
         </p>
     <% } %>
 </div>
